@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <Navbar className='container' bg="none" variant="dark">
-        <Navbar.Brand as={Link} to={`/home/`}>Rajjo Bazar</Navbar.Brand>
+        <Navbar.Brand as={Link} to={`/home/`}>Smart Shop BD</Navbar.Brand>
         <Nav className="mr-auto align-items-end">
           <Nav.Link as={Link} to={`/home/`}>Home</Nav.Link>
           <Nav.Link as={Link} to={`/orderInfo`}>Orders</Nav.Link>

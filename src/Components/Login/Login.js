@@ -62,19 +62,7 @@ const Login = () => {
       });
   };
 
-  const handleFbSignIn = () => {
-    const fbProvider = new firebase.auth.FacebookAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(fbProvider)
-      .then((result) => {
-        const { displayName, email } = result.user;
-        const signedInUser = { name: displayName, email: email };
-        setLoggedInUser(signedInUser);
-        history.replace(from);
-      })
-      .catch((error) => {});
-  };
+  
 
   const handleGoogleLogin = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -157,13 +145,7 @@ const Login = () => {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row}>
-          <Col sm={{ span: 10, offset: 2 }}>
-            <Button variant="outline-info" onClick={handleFbSignIn}>
-              <FontAwesomeIcon icon={faFacebookSquare} /> Continue with Facebook
-            </Button>
-          </Col>
-        </Form.Group>
+        
 
       </div>
 
