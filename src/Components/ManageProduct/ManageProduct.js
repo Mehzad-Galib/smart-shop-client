@@ -23,9 +23,11 @@ const ManageProduct = () => {
         setFoods(data);
       }, [foods]);
     });
+
   return (
     <div className="d-flex mt-5">
       <div className="col-md-3">
+
         <Button as={Link} to={`/admin/manageProduct`} variant="outline-info">
           Manage Products
         </Button>
@@ -69,4 +71,5 @@ const ManageProduct = () => {
     </div>
   );
 }
+
 export default ManageProduct;

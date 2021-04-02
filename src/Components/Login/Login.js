@@ -6,7 +6,7 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { UserContext } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory, useLocation } from "react-router";
 import { useForm } from "react-hook-form";
 import './Login.css';
@@ -22,14 +22,7 @@ const Login = () => {
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
-  const [newUser, setNewUser] = useState(false);
-  const [user, setUser] = useState({
-    isSignedIn: false,
-    name: "",
-    email: "",
-    password: null,
-    ConfirmPassword: null,
-  });
+  
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const onSubmit = (data) => {
@@ -151,12 +144,7 @@ const Login = () => {
 
       
       
-      {user.success && (
-        <p style={{ color: "green" }}>
-          {" "}
-          User {newUser ? "Create" : "logged in"} Successfully
-        </p>
-      )}
+     
     </div>
   );
 };
