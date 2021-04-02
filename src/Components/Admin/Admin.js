@@ -12,7 +12,7 @@ const Admin = () => {
     
     const newData = {...data, imgUrl: image}
     
-    fetch("https://banana-shortcake-73772.herokuapp.com/addFood", {
+    fetch("http://localhost:8080/addFood", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),

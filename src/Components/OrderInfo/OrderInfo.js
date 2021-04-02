@@ -2,16 +2,21 @@ import React, { useEffect, useState, useContext } from "react";
 import { Table } from "react-bootstrap";
 import { UserContext } from "../../App";
 
+
+
 const OrderInfo = () => {
     const [info, setInfo] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(()=>{
-        fetch('https://banana-shortcake-73772.herokuapp.com/purchase?email='+loggedInUser.email)
+        fetch(`http://localhost:8080/purchase?email=${loggedInUser.email}`, {
+            method: 'GET',
+            headers: {'Content-type': 'application/json'}
+        })
         .then(res=>res.json())
         .then(data =>{
             setInfo(data)
         })
-    })
+    }, [])
     
 
     return (

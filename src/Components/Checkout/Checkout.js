@@ -11,7 +11,7 @@ const Checkout = () => {
     const [message, setMessage] = useState(null);
     useEffect(()=>{
 
-        fetch(`https://banana-shortcake-73772.herokuapp.com/checkout/${id}`,{
+        fetch(`http://localhost:8080/checkout/${id}`,{
             method: 'GET'
         })
         .then(res => res.json())
@@ -33,7 +33,7 @@ const Checkout = () => {
         const allInfo = {...loggedInUser, ...date, ...product}
         console.log(allInfo);
 
-        fetch("https://banana-shortcake-73772.herokuapp.com/orderInfo", {
+        fetch("http://localhost:8080/orderInfo", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(allInfo),
