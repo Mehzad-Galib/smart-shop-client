@@ -8,7 +8,7 @@ const OrderInfo = () => {
     const [info, setInfo] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(()=>{
-        fetch(`http://localhost:8080/purchase?email=${loggedInUser.email}`, {
+        fetch(`https://lit-wave-54793.herokuapp.com/purchase?email=${loggedInUser.email}`, {
             method: 'GET',
             headers: {'Content-type': 'application/json'}
         })
@@ -16,7 +16,7 @@ const OrderInfo = () => {
         .then(data =>{
             setInfo(data)
         })
-    }, [])
+    }, [loggedInUser.email])
     
 
     return (

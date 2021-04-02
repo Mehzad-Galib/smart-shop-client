@@ -7,7 +7,7 @@ const ManageProduct = () => {
 
     const handleDelete = (id) => {
        
-        fetch(`http://localhost:8080/delete/${id}`, {
+        fetch(`https://lit-wave-54793.herokuapp.com/delete/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -17,7 +17,7 @@ const ManageProduct = () => {
       };
 
   useEffect(() => {
-    fetch("http://localhost:8080/foods")
+    fetch("https://lit-wave-54793.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);

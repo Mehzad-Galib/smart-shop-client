@@ -6,12 +6,12 @@ import { UserContext } from "../../App";
 const Checkout = () => {
 
     let { id } = useParams();
-    console.log(id);
+    // console.log(id);
     const [product, setProduct] = useState({});
     const [message, setMessage] = useState(null);
     useEffect(()=>{
 
-        fetch(`http://localhost:8080/checkout/${id}`,{
+        fetch(`https://lit-wave-54793.herokuapp.com/checkout/${id}`,{
             method: 'GET'
         })
         .then(res => res.json())
@@ -33,9 +33,12 @@ const Checkout = () => {
         const allInfo = {...loggedInUser, ...date, ...product}
         console.log(allInfo);
 
-        fetch("http://localhost:8080/orderInfo", {
+        fetch("https://lit-wave-54793.herokuapp.com/orderInfo", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+          "Content-Type": "application/json",
+          "Access-Control-Request-Origin": "https://smart-shop-8be10.web.app/"
+    },
       body: JSON.stringify(allInfo),
     }).then((res) => res.json());
     setMessage("Order Placed Successfully")
