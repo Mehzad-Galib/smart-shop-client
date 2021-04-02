@@ -36,10 +36,10 @@ const Checkout = () => {
         fetch("https://lit-wave-54793.herokuapp.com/orderInfo", {
       method: "POST",
       headers: { 
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://smart-shop-8be10.web.app"
+          "Content-Type": "application/json"
+          
     },
-      body: JSON.stringify(allInfo),
+      body: JSON.stringify(allInfo)
     }).then((res) => res.json());
     setMessage("Order Placed Successfully")
 
