@@ -37,7 +37,7 @@ const Checkout = () => {
       method: "POST",
       headers: { 
           "Content-Type": "application/json",
-          "Access-Control-Request-Origin": "https://smart-shop-8be10.web.app"
+          "Access-Control-Allow-Origin": "https://smart-shop-8be10.web.app"
     },
       body: JSON.stringify(allInfo),
     }).then((res) => res.json());
