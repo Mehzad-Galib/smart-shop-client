@@ -6,20 +6,17 @@ import { UserContext } from "../../App";
 const Checkout = () => {
 
     let { id } = useParams();
-    // console.log(id);
     const [product, setProduct] = useState({});
     const [message, setMessage] = useState(null);
     useEffect(()=>{
 
-        fetch(`https://lit-wave-54793.herokuapp.com/checkout/${id}`,{
-            method: 'GET'
-        })
+        fetch(`https://lit-wave-54793.herokuapp.com/checkout/${id}`)
         .then(res => res.json())
         .then(data => {
             setProduct(data)
-            // console.log(product)
+            
         })
-    }, [id])
+    }, [id]);
     const {productName, price} = product;
     console.log(product);
 
@@ -40,8 +37,12 @@ const Checkout = () => {
           
     },
       body: JSON.stringify(allInfo)
-    }).then((res) => res.json());
-    setMessage("Order Placed Successfully")
+    }).then((res) => res.json())
+    .then(data=> {
+        setMessage("Order Placed Successfully")
+    })
+
+    
 
     };
     

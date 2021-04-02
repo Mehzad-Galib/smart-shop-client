@@ -8,10 +8,7 @@ const OrderInfo = () => {
     const [info, setInfo] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(()=>{
-        fetch(`https://lit-wave-54793.herokuapp.com/purchase?email=${loggedInUser.email}`, {
-            method: 'GET',
-            headers: {'Content-type': 'application/json'}
-        })
+        fetch(`https://lit-wave-54793.herokuapp.com/purchase?email=${loggedInUser.email}`)
         .then(res=>res.json())
         .then(data =>{
             setInfo(data)
