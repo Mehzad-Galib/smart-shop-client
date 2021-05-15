@@ -23,7 +23,7 @@ const OrderInfo = () => {
                 <Table>
                     <thead>
                     <tr>
-                        <td>Customer Name</td>
+                        <td>Customer's Name</td>
                         <td>Order Date</td>
                         <td>Product</td>
                         <td>Weight</td>
